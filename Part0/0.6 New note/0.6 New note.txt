@@ -1,0 +1,17 @@
+title 0.6: New note
+note over Browser: User visits site
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: HTML Code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: CSS Code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: spa.js
+note over Browser: Browser starts executing Javascript, requests JSON data
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: JSON data
+note over Browser: Browser executes event handler to redraw notes
+note over Browser: form user input
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over Browser: Event handler creates a new note, adds it to the list and renders it
+note over Browser: Browser sends the new note to the server as JSON-data
+Server-->Browser: Server responds with status code 201 created.
